@@ -12,8 +12,11 @@
     </button>
   </div>
   {% endif %}
-
-  <h1>{{num_1}} / {{ num_2 }}</h1>
+  <br /><br />
+  <h1>
+    <img src="../../static/images/{{num_1}}.png" /> / <img
+    src="../../static/images/{{num_2}}.png"
+  </h1>
 
   <br /><br />
   <form action="{% url 'divide' %}" method="POST">
@@ -32,4 +35,5 @@
     <button type="submit" class="btn btn-secondary">Submit</button>
   </form>
 </center>
+<h2>Enter answer upto 2 decimal places for division.</h2>
 {% endblock %}

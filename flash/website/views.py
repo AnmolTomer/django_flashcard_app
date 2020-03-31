@@ -7,6 +7,8 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'home.html', {})
 
+# --------------------------------------------------------------ADD-------------------------------------------------------------------------
+
 
 def add(request):
     from random import randint
@@ -42,6 +44,8 @@ def add(request):
         'num_2': num_2,
     })
 
+# --------------------------------------------------------------SUBTRACT-------------------------------------------------------------------------
+
 
 def subtract(request):
     from random import randint
@@ -75,6 +79,8 @@ def subtract(request):
         'num_1': num_1,
         'num_2': num_2,
     })
+
+# --------------------------------------------------------------MULTIPLY-------------------------------------------------------------------------
 
 
 def multiply(request):
@@ -110,10 +116,12 @@ def multiply(request):
         'num_2': num_2,
     })
 
+# --------------------------------------------------------------DIVIDE-------------------------------------------------------------------------
+
 
 def divide(request):
     from random import randint
-    num_1 = randint(1, 10)
+    num_1 = randint(0, 10)
     num_2 = randint(1, 10)
 
     if request.method == "POST":
@@ -122,14 +130,14 @@ def divide(request):
         old_num_2 = request.POST['old_num_2']
 
         correct_answer = int(old_num_1)/int(old_num_2)
+        correct_answer = float("{:.2f}".format(correct_answer))
 
-        if(answer == correct_answer):
+        if("{:.2f}".format(float(answer)) == "{:.2f}".format(float(correct_answer))):
             my_answer = "Correct! " + old_num_1 + \
-                " / " + old_num_2 + " = " + int(answer)
+                " / " + old_num_2 + " = " + str(answer)
             color = "success"
         else:
-            my_answer = "Incorrect! " + old_num_1 + " / " + old_num_2 + \
-                " does not equals " + \
+            my_answer = "Incorrect! " + old_num_1 + " / " + old_num_2 + " does not equals " + \
                 str(answer) + ". Correct answer is: " + str(correct_answer)
             color = "danger"
 
