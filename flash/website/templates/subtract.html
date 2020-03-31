@@ -3,6 +3,7 @@
 
 {% block 'content' %}
 <h1>Subtract</h1>
+{{answer}}
 <br /><br />
 <form action="{% url 'subtract' %}" method="POST">
   {% csrf_token %}

@@ -3,6 +3,7 @@
 
 {% block 'content' %}
 <h1>Divide</h1>
+{{answer}}
 <br /><br />
 <form action="{% url 'divide' %}" method="POST">
   {% csrf_token %}
