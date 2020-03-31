@@ -20,6 +20,17 @@ def add(request):
         answer = request.POST['answer']
         old_num_1 = request.POST['old_num_1']
         old_num_2 = request.POST['old_num_2']
+# Error handling if form submitted without answer and warning displayed.
+        if not answer:
+            my_answer = "Hey! You forgot to fill the answer."
+            color = "warning"
+            return render(request, "add.html", {
+                'color': color,
+                'my_answer': my_answer,
+                'num_1': num_1,
+                'num_2': num_2,
+                'answer': answer,
+            })
 
         correct_answer = int(old_num_1) + int(old_num_2)
 
@@ -56,6 +67,17 @@ def subtract(request):
         answer = request.POST['answer']
         old_num_1 = request.POST['old_num_1']
         old_num_2 = request.POST['old_num_2']
+# Error handling if form submitted without answer and warning displayed.
+        if not answer:
+            my_answer = "Hey! You forgot to fill the answer."
+            color = "warning"
+            return render(request, "subtract.html", {
+                'color': color,
+                'my_answer': my_answer,
+                'num_1': num_1,
+                'num_2': num_2,
+                'answer': answer,
+            })
 
         correct_answer = int(old_num_1) - int(old_num_2)
 
@@ -93,6 +115,18 @@ def multiply(request):
         old_num_1 = request.POST['old_num_1']
         old_num_2 = request.POST['old_num_2']
 
+# Error handling if form submitted without answer and warning displayed.
+        if not answer:
+            my_answer = "Hey! You forgot to fill the answer."
+            color = "warning"
+            return render(request, "multiply.html", {
+                'color': color,
+                'my_answer': my_answer,
+                'num_1': num_1,
+                'num_2': num_2,
+                'answer': answer,
+            })
+
         correct_answer = int(old_num_1)*int(old_num_2)
         if(int(answer) == correct_answer):
             my_answer = "Correct! " + old_num_1 + " * " + old_num_2 + " = " + answer
@@ -128,6 +162,18 @@ def divide(request):
         answer = request.POST['answer']
         old_num_1 = request.POST['old_num_1']
         old_num_2 = request.POST['old_num_2']
+
+# Error handling if form submitted without answer and warning displayed.
+        if not answer:
+            my_answer = "Hey! You forgot to fill the answer."
+            color = "warning"
+            return render(request, "divide.html", {
+                'color': color,
+                'my_answer': my_answer,
+                'num_1': num_1,
+                'num_2': num_2,
+                'answer': answer,
+            })
 
         correct_answer = int(old_num_1)/int(old_num_2)
         correct_answer = float("{:.2f}".format(correct_answer))
