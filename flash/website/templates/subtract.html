@@ -4,7 +4,16 @@
 {% block 'content' %}
 
 <center>
-  {{my_answer}}
+  {% if my_answer %}
+  <!-- Checks if user entered answer or just simple page was called by checking if my_answer exists -->
+  <div class="alert alert-{{color}} alert-dismissible fade show" role="alert">
+    <strong>{{ my_answer }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endif %}
+
   <h1>{{num_1}} - {{ num_2 }}</h1>
 
   <br /><br />

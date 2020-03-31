@@ -23,15 +23,18 @@ def add(request):
 
         if(int(answer) == correct_answer):
             my_answer = "Correct! " + old_num_1 + " + " + old_num_2 + " = " + answer
+            color = "success"
         else:
             my_answer = "Incorrect! " + old_num_1 + " + " + old_num_2 + \
                 " does not equals " + \
                 str(answer) + ". Correct answer is: " + str(correct_answer)
+            color = "danger"
         return render(request, 'add.html', {
             'answer': answer,
             'my_answer': my_answer,
             'num_1': num_1,
-            'num_2': num_2
+            'num_2': num_2,
+            'color': color,
         })
         # return the page add.html and in context {} we return the key-value pair of variable answer.
     return render(request, 'add.html', {
@@ -54,16 +57,19 @@ def subtract(request):
 
         if(int(answer) == correct_answer):
             my_answer = "Correct! " + old_num_1 + " - " + old_num_2 + " = " + answer
+            color = "success"
         else:
             my_answer = "Incorrect! " + old_num_1 + " - " + old_num_2 + \
                 " does not equals " + \
                 str(answer) + ". Correct answer is: " + str(correct_answer)
+            color = "danger"
 
         return render(request, 'subtract.html', {
             'answer': answer,
             'my_answer': my_answer,
             'num_1': num_1,
-            'num_2': num_2
+            'num_2': num_2,
+            'color': color,
         })
     return render(request, "subtract.html", {
         'num_1': num_1,
@@ -84,15 +90,20 @@ def multiply(request):
         correct_answer = int(old_num_1)*int(old_num_2)
         if(int(answer) == correct_answer):
             my_answer = "Correct! " + old_num_1 + " * " + old_num_2 + " = " + answer
+            color = "success"
         else:
             my_answer = "Incorrect! " + old_num_1 + " * " + old_num_2 + \
                 " does not equals " + \
                 str(answer) + ". Correct answer is: " + str(correct_answer)
+            color = "danger"
+
         return render(request, 'multiply.html', {
             'answer': answer,
             'my_answer': my_answer,
             'num_1': num_1,
-            'num_2': num_2
+            'num_2': num_2,
+            'color': color,
+
         })
     return render(request, "multiply.html", {
         'num_1': num_1,
@@ -115,16 +126,19 @@ def divide(request):
         if(answer == correct_answer):
             my_answer = "Correct! " + old_num_1 + \
                 " / " + old_num_2 + " = " + int(answer)
+            color = "success"
         else:
             my_answer = "Incorrect! " + old_num_1 + " / " + old_num_2 + \
                 " does not equals " + \
                 str(answer) + ". Correct answer is: " + str(correct_answer)
+            color = "danger"
 
         return render(request, "divide.html", {
             'answer': answer,
             'my_answer': my_answer,
             'num_1': num_1,
-            'num_2': num_2
+            'num_2': num_2,
+            'color': color,
         })
     return render(request, "divide.html", {
         'num_1': num_1,
