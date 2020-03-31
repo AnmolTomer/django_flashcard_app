@@ -17,4 +17,25 @@
 
 - On adding the code above, upon viewing the page source we will be able to see generated random numbers in page source.
 
--
+- Following is the entire code for getting the answer from user, checking the correct answer and showing the result to user:
+
+```python
+if request.method == "POST":
+    # Comes from the input box where we named it answer
+    answer = request.POST['answer']
+    old_num_1 = request.POST['old_num_1']
+    old_num_2 = request.POST['old_num_2']
+
+    correct_answer = int(old_num_1) + int(old_num_2)
+
+    if(int(answer) == correct_answer):
+        my_answer = "Correct!"
+    else:
+        my_answer = "Incorrect!"
+    return render(request, 'add.html', {
+        'answer': answer,
+        'my_answer': my_answer
+        })
+```
+
+- Go to add.html and after <center> tag add the following to show the result `{{my_answer}}`
