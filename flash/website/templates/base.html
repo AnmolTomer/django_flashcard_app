@@ -36,27 +36,27 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="{% url 'home' %}"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Add</a>
+            <a class="nav-link" href="{% url 'add' %}">Add</a>
           </li>
 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Subtract</a>
+          <a class="nav-link" href="{% url 'subtract' %}">Subtract</a>
         </li>
 
         </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Multiply</a>
-          </li>
+            <a class="nav-link" href="{% url 'multiply' %}">Multiply</a>
+        </li>
 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Divide</a>
+          <a class="nav-link" href="{% url 'divide' %}">Divide</a>
         </li>  
           
           
