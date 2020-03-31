@@ -2,20 +2,22 @@
 <!--  -->
 
 {% block 'content' %}
-<h1>Divide</h1>
-{{answer}}
-<br /><br />
-<form action="{% url 'divide' %}" method="POST">
-  {% csrf_token %}
-  <div class="form-group">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Type Your Answer Here"
-      name="answer"
-    />
-  </div>
-  <br />
-  <button type="submit" class="btn btn-secondary">Submit</button>
-</form>
+<center>
+  <h1>{{num_1}} / {{ num_2 }}</h1>
+
+  <br /><br />
+  <form action="{% url 'divide' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Type Your Answer Here"
+        name="answer"
+      />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+</center>
 {% endblock %}
