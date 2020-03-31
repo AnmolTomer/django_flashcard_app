@@ -16,6 +16,8 @@ def add(request):
     if request.method == "POST":
         # Comes from the input box where we named it answer
         answer = request.POST['answer']
+        old_num_1 = request.POST['old_num_1']
+        old_num_2 = request.POST['old_num_2']
         return render(request, 'add.html', {'answer': answer})
         # return the page add.html and in context {} we return the key-value pair of variable answer.
     return render(request, 'add.html', {
@@ -31,6 +33,8 @@ def subtract(request):
 
     if request.method == "POST":
         answer = request.POST['answer']
+        old_num_1 = request.POST['old_num_1']
+        old_num_2 = request.POST['old_num_2']
         return render(request, 'subtract.html', {'answer': answer})
     return render(request, "subtract.html", {'num_1': num_1,
                                              'num_2': num_2, })
@@ -43,6 +47,8 @@ def multiply(request):
 
     if request.method == "POST":
         answer = request.POST['answer']
+        old_num_1 = request.POST['old_num_1']
+        old_num_2 = request.POST['old_num_2']
         return render(request, 'multiply.html', {'answer': answer})
     return render(request, "multiply.html", {
         'num_1': num_1,
@@ -57,6 +63,8 @@ def divide(request):
 
     if request.method == "POST":
         answer = request.POST['answer']
+        old_num_1 = request.POST['old_num_1']
+        old_num_2 = request.POST['old_num_2']
         return render(request, "divide.html", {'answer': answer})
     return render(request, "divide.html", {
         'num_1': num_1,
