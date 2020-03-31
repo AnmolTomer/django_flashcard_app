@@ -22,9 +22,11 @@ def add(request):
         correct_answer = int(old_num_1) + int(old_num_2)
 
         if(int(answer) == correct_answer):
-            my_answer = "Correct!"
+            my_answer = "Correct! " + old_num_1 + " + " + old_num_2 + " = " + answer
         else:
-            my_answer = "Incorrect!"
+            my_answer = "Incorrect! " + old_num_1 + " + " + old_num_2 + \
+                " does not equals " + \
+                str(answer) + ". Correct answer is: " + str(correct_answer)
         return render(request, 'add.html', {
             'answer': answer,
             'my_answer': my_answer,
@@ -51,9 +53,11 @@ def subtract(request):
         correct_answer = int(old_num_1) - int(old_num_2)
 
         if(int(answer) == correct_answer):
-            my_answer = "Correct!"
+            my_answer = "Correct! " + old_num_1 + " - " + old_num_2 + " = " + answer
         else:
-            my_answer = "Incorrect!"
+            my_answer = "Incorrect! " + old_num_1 + " - " + old_num_2 + \
+                " does not equals " + \
+                str(answer) + ". Correct answer is: " + str(correct_answer)
 
         return render(request, 'subtract.html', {
             'answer': answer,
@@ -79,9 +83,11 @@ def multiply(request):
 
         correct_answer = int(old_num_1)*int(old_num_2)
         if(int(answer) == correct_answer):
-            my_answer = "Correct!"
+            my_answer = "Correct! " + old_num_1 + " * " + old_num_2 + " = " + answer
         else:
-            my_answer = "Incorrect!"
+            my_answer = "Incorrect! " + old_num_1 + " * " + old_num_2 + \
+                " does not equals " + \
+                str(answer) + ". Correct answer is: " + str(correct_answer)
         return render(request, 'multiply.html', {
             'answer': answer,
             'my_answer': my_answer,
@@ -96,8 +102,8 @@ def multiply(request):
 
 def divide(request):
     from random import randint
-    num_1 = randint(0, 10)
-    num_2 = randint(0, 10)
+    num_1 = randint(1, 10)
+    num_2 = randint(1, 10)
 
     if request.method == "POST":
         answer = request.POST['answer']
@@ -107,9 +113,12 @@ def divide(request):
         correct_answer = int(old_num_1)/int(old_num_2)
 
         if(answer == correct_answer):
-            my_answer = "Correct!"
+            my_answer = "Correct! " + old_num_1 + \
+                " / " + old_num_2 + " = " + int(answer)
         else:
-            my_answer = "Incorrect!"
+            my_answer = "Incorrect! " + old_num_1 + " / " + old_num_2 + \
+                " does not equals " + \
+                str(answer) + ". Correct answer is: " + str(correct_answer)
 
         return render(request, "divide.html", {
             'answer': answer,
