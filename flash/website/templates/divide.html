@@ -4,12 +4,14 @@
 {% block 'content' %}
 <h1>Divide</h1>
 <br /><br />
-<form>
+<form action="{% url 'divide' %}" method="POST">
+  {% csrf_token %}
   <div class="form-group">
     <input
       type="text"
       class="form-control"
       placeholder="Type Your Answer Here"
+      name="answer"
     />
   </div>
   <br />
