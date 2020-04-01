@@ -49,3 +49,12 @@ git commit -m "Message about changes done to project."
 git remote add origin git@github.com:AnmolTomer/django_flashcard_app.git
 git push -u origin master
 ```
+
+- After messing up the code if you want reality to be whatever you want it to be:
+
+```bash
+git log # pick commit ID of commit where you want to be.
+q to quit git log
+git reset --hard <commit ID>
+git push -f origin master
+```
