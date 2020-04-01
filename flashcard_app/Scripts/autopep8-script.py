@@ -1,4 +1,4 @@
-#!D:\anmol\Documents\a_vit\Sem-4\Events\django_flashcard_app\flashcard_app\Scripts\python.exe
+#!d:\anmol\documents\a_vit\sem-4\events\django_flashcard_app\flashcard_app\scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'autopep8==1.5','console_scripts','autopep8'
 __requires__ = 'autopep8==1.5'
 import re
