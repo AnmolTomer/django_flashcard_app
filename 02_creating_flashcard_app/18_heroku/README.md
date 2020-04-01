@@ -53,3 +53,15 @@ django_heroku.settings(locals())
 - Whitenoise is for static files, that's all I know that we need to know for now. Will update here in future on whitenoise.
 
 - `pip freeze` to see everything that is installed in the virtual env. Copy and paste these into requirements.txt file to tell heroku what are the packages needed by website.
+
+---
+
+# Push Code to Heroku
+
+---
+
+- Sign up for Heroku and Log In
+
+- Type `heroku login` and browser will open with heroku follow the instructions to log in to heroku on your terminal.
+
+- `heroku create` to create an app.
