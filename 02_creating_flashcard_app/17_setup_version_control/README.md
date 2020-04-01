@@ -28,3 +28,24 @@ git commit -m "Message about changes done to project."
 - Finish implementing your changes on the feature branch. Once you are done, add, commit and push to a new branch on source repo using `git push origin new_feature_branch_name`
 
 - Go to GitHub/GitLab/BitBucker or whatever site you are using, see the new PR from feature branch to master and check the diff, using CI define some tests if you want and merge if it's good.
+
+---
+
+## Connecting local git with your GitHub account
+
+- Go to /c/Users/<username> with git bash type in the following `mkdir .ssh`
+
+- Creates a new hidden folder called ssh for security purposes.
+
+- cd to .ssh >> Type in `ssh-keygen.exe` to Generate ssh key. >> Enter passphrase if you want. Just hit enter twice if you don't want to enter the password, it will be blank in that case.
+
+- If you see .ssh folder now you might notice `id_rsa` and `id_rsa.pub` files.
+
+- `cat id_rsa.pub` will output a string copy this string and go to GitHub >> Settings >> SSH and GPG keys >> New SSH Key and Enter title and string you copied in key area, enter password to confirm that it is actually the owner who is entering the key.
+
+- Create a new repo GitHub will show a similar command to push an existing repo from command line which will be something like this:
+
+```bash
+git remote add origin git@github.com:AnmolTomer/django_flashcard_app.git
+git push -u origin master
+```
