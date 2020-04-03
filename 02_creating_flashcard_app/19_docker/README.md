@@ -6,4 +6,6 @@
 
 ---
 
-- If you are having a docker-compose.yml file, you would run `docker-compose up --build` to build and run the image
+- If you are having a docker-compose.yml file, for first time you would run `docker-compose up --build` to build and run the image
+- After you are done press `Ctrl+C` or do a `docker-compose stop`
+- To start the docker-compose from second time onwards after build is succesful just do a simple `docker-compose up` and that's it.
